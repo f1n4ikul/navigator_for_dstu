@@ -1,7 +1,7 @@
 const map = new mapgl.Map("container", {
 	center: [39.713214, 47.236867],
 	zoom: 17,
-	key: process.env.API_KEY,
+	key: "2fbc238f-838c-4a88-9bba-7d7ef8f5405f",
 });
 
 const building = [
@@ -37,7 +37,7 @@ const marker = new mapgl.Marker(map, {
 });
 
 const directions = new mapgl.Directions(map, {
-	directionsApiKey: process.env.API_KEY,
+	directionsApiKey: "2fbc238f-838c-4a88-9bba-7d7ef8f5405f",
 });
 const markers = [];
 
