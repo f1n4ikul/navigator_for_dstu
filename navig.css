@@ -1,0 +1,184 @@
+html,
+body,
+#container {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row-reverse;
+	font-family: Nunito;
+}
+
+.navigation {
+	width: 430px;
+	height: 100%;
+	padding: 20px;
+	background-color: #3a86f9;
+}
+
+.from {
+	width: 320px;
+	height: 80px;
+	border-radius: 10px;
+	background-color: white;
+	margin: 0 auto;
+	margin-bottom: 27px;
+}
+
+.from label {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	flex-direction: column;
+	padding: 5px;
+}
+
+.ui_widget {
+	padding: 5px;
+	margin: 10px;
+}
+
+.from form {
+	margin: 0 auto;
+}
+
+.from input {
+	border: none;
+	height: 40px;
+}
+
+.from input:focus {
+	outline: none;
+}
+
+.from p {
+	margin: 0;
+}
+
+.icon {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.from_img {
+	display: flex;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	/* background-color: white; */
+	margin-bottom: 27px;
+}
+
+.from_img img {
+	padding: 5px;
+	display: block;
+	margin: 0 auto;
+}
+
+.opisanie {
+	width: 320px;
+	height: 640px;
+	border-radius: 10px;
+	background-color: white;
+	margin: 0 auto;
+	margin-bottom: 27px;
+	position: relative;
+}
+
+.opisanie label {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.opisanie form {
+	margin: 0 auto;
+}
+
+.opisanie p {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+}
+.description_build {
+	margin-bottom: 20px;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 10px 20px 20px 20px;
+}
+pre {
+	font-size: large;
+	font-weight: 590;
+	margin: 0;
+	font-family: Nunito;
+}
+.btn_select_route {
+	height: 50px;
+	background-color: white;
+	border: none;
+	border-radius: 10px;
+	transition: 0.2s linear;
+}
+.btn_select_route:hover {
+	background-color: #939db3;
+}
+
+.icon input[type="radio"] {
+	display: none;
+}
+.icon input {
+	cursor: default;
+}
+
+/* Стилизация для радиокнопок */
+.icon label {
+	display: inline-block;
+	position: relative;
+	padding-left: 30px;
+	margin-right: 15px;
+	cursor: default;
+}
+
+.icon label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #0074d9; /* Синий цвет */
+	border-radius: 50%;
+	background-color: #bbbbbb; /* Цвет фона */
+}
+
+.icon input[type="radio"]:checked + label:before {
+	background-color: #04bd42; /* Заливка при выборе */
+}
+
+/* Анимация при наведении */
+/* .icon label:hover:before {
+	transform: scale(1.1);
+	transition: transform 0.2s ease-in-out;
+} */
+
+.opisanie button {
+	position: absolute;
+	bottom: 3%;
+	right: 20%;
+}
+.description_build h2 {
+	font-size: 18px;
+}
+
+input[id="tagfrom"] {
+	width: 90%;
+}
+input[id="tagto"] {
+	width: 90%;
+}
