@@ -1,7 +1,12 @@
+const center = [39.713214, 47.236867];
+const rotation = 30;
+const zoom = 17;
+
 const map = new mapgl.Map("container", {
-	center: [39.713214, 47.236867],
-	zoom: 17,
-	key: "2fbc238f-838c-4a88-9bba-7d7ef8f5405f",
+	center: center,
+	zoom: zoom,
+	key: "b7584b68-c7d8-4e1b-9de8-705483c46963",
+	rotation: rotation,
 });
 
 const building = [
@@ -25,9 +30,12 @@ const building = [
 	[39.6546034605336, 47.2510632291049], // k11 Ул. Шаповалова, 2а
 ];
 
+const icon = "marker.svg";
+
 building.forEach((coord) => {
 	const markernew = new mapgl.Marker(map, {
 		coordinates: coord,
+		icon: icon,
 	});
 });
 
@@ -37,7 +45,7 @@ const marker = new mapgl.Marker(map, {
 });
 
 const directions = new mapgl.Directions(map, {
-	directionsApiKey: "2fbc238f-838c-4a88-9bba-7d7ef8f5405f",
+	directionsApiKey: "b7584b68-c7d8-4e1b-9de8-705483c46963",
 });
 const markers = [];
 
@@ -83,14 +91,6 @@ const availableTags = [
 	"Корпус № 10",
 	"Корпус № 11",
 	"Корпус № 12",
-	"Корпус № 13",
-	"Корпус № 14",
-	"Корпус № 15",
-	"Корпус № 16",
-	"Корпус № 17",
-	"Корпус № 18",
-	"Корпус № 19",
-	"Корпус № 20",
 	"Корпус № 21",
 	"Корпус № 22",
 	"Корпус № 23",
@@ -122,6 +122,33 @@ $(function () {
 });
 
 var to_coord;
+
+var korpus1,
+	korpus2,
+	korpus3,
+	korpus4,
+	korpus5,
+	korpus6,
+	korpus7,
+	korpus8,
+	korpus9,
+	korpus10,
+	korpus11,
+	korpus12,
+	korpus13,
+	korpus14,
+	korpus15,
+	korpus16,
+	korpus17,
+	korpus18,
+	korpus19,
+	korpus20,
+	korpus21,
+	korpus22,
+	korpus23,
+	korpus24,
+	korpus25,
+	korpus26;
 
 var korpusDescriptions = {
 	"Главный корпус": korpus1,
@@ -156,6 +183,38 @@ $(function () {
 	$("#tagto").autocomplete({
 		source: availableTags,
 		select: function (event, ui) {
+			var selectedValue = ui.item.value;
+			console.log(selectedValue);
+
+			var korpusDescriptions = {
+				"Главный корпус": korpus1,
+				"Корпус № 2": korpus2,
+				"Корпус № 3": korpus3,
+				"Корпус № 4": korpus4,
+				"Корпус № 5": korpus5,
+				"Корпус № 6": korpus6,
+				"Корпус № 7": korpus7,
+				"Корпус № 8": korpus8,
+				"Корпус № 9": korpus9,
+				"Корпус № 10": korpus10,
+				"Корпус № 11": korpus11,
+				"Корпус № 12": korpus12,
+				"Корпус № 13": korpus13,
+				"Корпус № 14": korpus14,
+				"Корпус № 15": korpus15,
+				"Корпус № 16": korpus16,
+				"Корпус № 17": korpus17,
+				"Корпус № 18": korpus18,
+				"Корпус № 19": korpus19,
+				"Корпус № 20": korpus20,
+				"Корпус № 21": korpus21,
+				"Корпус № 22": korpus22,
+				"Корпус № 23": korpus23,
+				"Корпус № 24": korpus24,
+				"Корпус № 25": korpus25,
+				"Корпус № 26": korpus26,
+			};
+
 			to_coord = point_kampus[ui.item.value];
 			console.log("это метка в - ", to_coord);
 			selectedTags.push(to_coord);
@@ -165,14 +224,14 @@ $(function () {
 					icon: "https://docs.2gis.com/img/dotMarker.svg",
 				})
 			);
-
 			if (window.currentDescription) {
 				window.currentDescription.remove();
 				window.currentDescription = undefined;
 			}
 
-			if (korpusDescriptions[newValue]) {
-				window.currentDescription = korpusDescriptions[newValue]();
+			// Если функция существует для данного корпуса, вызови её и сохраняем описание
+			if (korpusDescriptions[selectedValue]) {
+				window.currentDescription = korpusDescriptions[selectedValue]();
 			}
 		},
 	});
@@ -209,9 +268,9 @@ function RoteutingPedestrian(secondPoint, firstPoint) {
 	console.log("func rotate pedestrian");
 }
 
-const buttonText = "Reset points";
+const buttonText = "Сбросить маршрут";
 
-const btn = `<button id="reset">${buttonText}</button> `;
+const btn = `<button class="btn btn-primary" id="reset">${buttonText}</button> `;
 new mapgl.Control(map, btn, {
 	position: "topleft",
 });
@@ -221,5 +280,6 @@ resetButton.addEventListener("click", function () {
 	firstPoint = undefined;
 	secondPoint = undefined;
 	directions.clear();
+
 	selectedTags = [];
 });

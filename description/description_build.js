@@ -75,6 +75,12 @@ to_varible_tagto.addEventListener("input", function (event) {
 	if (korpusDescriptions[newValue]) {
 		window.currentDescription = korpusDescriptions[newValue]();
 	}
+	// if (window.currentRemoveFunction) {
+	// 	window.currentRemoveFunction(); // Удаляем предыдущие объекты
+	// }
+
+	// // Сохраняем новую функцию удаления
+	// window.currentRemoveFunction = show_korpus(point_kampus[newValue], 17, 30);
 
 	// Какой-то общий функционал для всех корпусов
 	if (newValue in point_kampus) {
@@ -120,6 +126,5 @@ to_varible_tagfrom.addEventListener("input", function (event) {
 			})
 		);
 		console.log(to_coord, from_coord, "its test 2");
-		// Roteuting(from_coord, to_coord);
 	}
 });

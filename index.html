@@ -42,14 +42,19 @@
 						<label for="tagfrom" style="font-family: Nunito"
 							>Откуда:</label
 						>
-						<input id="tagfrom" placeholder="Моё местоположение" />
+						<div class="move_to">
+							<input
+								id="tagfrom"
+								placeholder="Моё местоположение"
+							/>
+							<button class="btn btn-light" id="from_move">
+								<img
+									src="icons_route/DoubleChevronRight.svg"
+									alt=""
+								/>
+							</button>
+						</div>
 					</div>
-					<!-- <form class="input_form" action="">
-                    <label for="">
-                        <p>Откуда:</p>
-                        <input placeholder="Главный корпус" type="">
-                    </label>
-                </form> -->
 				</div>
 				<div class="from">
 					<div
@@ -59,14 +64,16 @@
 						<label for="tagto" style="font-family: Nunito"
 							>Куда:</label
 						>
-						<input id="tagto" placeholder="Корпус № 4" />
+						<div class="move_to">
+							<input id="tagto" placeholder="Корпус № 4" />
+							<button class="btn btn-light" id="to_move">
+								<img
+									src="icons_route/DoubleChevronRight.svg"
+									alt=""
+								/>
+							</button>
+						</div>
 					</div>
-					<!-- <form class="input_form" action="">
-                     <label for="">
-                        <p>Куда:</p>
-                        <input placeholder="Главный корпус" type="">
-                    </label>
-                </form> -->
 				</div>
 				<div class="icon">
 					<!-- <button class="btn_select_route" id="Route_Bus">
@@ -148,6 +155,7 @@
 		<script src="description/description_build.js"></script>
 		<script src="description/functions_add_descriptions.js"></script>
 		<script src="cheked_selected_route/radio.js"></script>
+		<script src="show_korpus_on_map.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

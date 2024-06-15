@@ -182,3 +182,10 @@ input[id="tagfrom"] {
 input[id="tagto"] {
 	width: 90%;
 }
+.move_to {
+	display: flex;
+	justify-content: space-between;
+}
+.move_to button {
+	width: 40px;
+}
