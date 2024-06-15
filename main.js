@@ -5,7 +5,7 @@ const zoom = 17;
 const map = new mapgl.Map("container", {
 	center: center,
 	zoom: zoom,
-	key: "b7584b68-c7d8-4e1b-9de8-705483c46963",
+	key: window.env.API_KEY,
 	rotation: rotation,
 });
 
@@ -45,7 +45,7 @@ const marker = new mapgl.Marker(map, {
 });
 
 const directions = new mapgl.Directions(map, {
-	directionsApiKey: "b7584b68-c7d8-4e1b-9de8-705483c46963",
+	directionsApiKey: window.env.API_KEY,
 });
 const markers = [];
 
